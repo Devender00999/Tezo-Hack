@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+}
+.heading{
+    font-size: 45px;
+    text-align: center;
+    padding: 20px;
+    margin: 5px;
+}
+
+.homepage{
+    align-items: center;
+    display: flex;
+    height: max-content;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
+    flex-direction: column;
+    margin: 0 90px;
+}
+.formContainer{
+    display: flex;
+    padding: 0 90px;
+    padding-bottom: 20px;
+}
+.imageContainer{
+    display: flex;
+    width: 50%;
+}
+.imageContainer img{
+    width: 100%;
+}
+
+.loginForm{
+    width: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input, select{
+    width: 300px;
+    padding: 5px 10px;
+    margin: 5px 20px;
+    font-size: 18px;
+}
+.pd-90{
+    padding: 0 90px;
+}
+
+label{
+    width: 300px;
+    margin-top:15px;
+}
+
+button{
+    background: #3380EF;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: 0;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+}
+
+form span{
+    color: red;
+    cursor: pointer;
+}
+
+#login{
+    width: 100%;
+    position: absolute;
+    transition: all 300ms ease-in;
+    /* transform: translate(-100%); */
+    background: white;
+}
+
+#register{
+    position: absolute;
+    transition: all 300ms ease-in;
+    background: white;
+
+    transform: translate(100%);
+}
