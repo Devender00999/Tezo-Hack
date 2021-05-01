@@ -10,7 +10,7 @@ nav {
     justify-content: space-between;
     padding: 10px;
     align-items: center;
-    background: #3380ef;
+    background: #8D99AE;
 }
 
 h1 {
@@ -44,7 +44,7 @@ nav img {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #DDE9FF;
+    background-color: #2B2D42;
     padding: 25px;
 }
 
@@ -67,9 +67,10 @@ nav img {
 .search input {
     font-size: 18px;
     outline: 0;
-    border: 0;
+    border: 2px solid #EF233C;
     left: -10px;
     position: relative;
+    background-color: rgba(239, 35, 60, 0.5);
     border-radius: 0px 25px 25px 0px;
     padding: 10px 10px 10px 12px;
 }
@@ -92,14 +93,14 @@ nav img {
 
 .player {
     flex: 3;
-    background-color: antiquewhite;
+    background-color: rgba(250, 0, 0);
     display: flex;
     flex-direction: column;
 }
 
 .songList {
     flex: 3;
-    background: #3380ef;
+    background: #2B2D42;
 }
 
 .songList table {
@@ -122,7 +123,7 @@ nav img {
 }
 
 .mediaControl {
-    background: yellow;
+    background: #8D99AE;
     flex: .7;
 }
 .length{
