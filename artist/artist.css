@@ -1,5 +1,5 @@
 .artistOptions{
-    background: yellow;
+    background: #8D99AE;
     flex: .7;
     display: flex;
     justify-content: space-evenly;
@@ -11,6 +11,7 @@
     position: relative;
     align-items: center;
     cursor: pointer;
+
 }
 
 .artistOptions i, .artistOptions .icon{
@@ -26,6 +27,8 @@
     z-index: 1;
     color: #0D61FF;
     font-weight: 100;
+    background-color: rgba(239, 35, 60, 0.5);
+    border: 2px solid #EF233C;
 
 }
 .icon img{
