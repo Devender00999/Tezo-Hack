@@ -14,8 +14,11 @@ main{
     text-align: center;
     padding: 20px;
     margin: 5px;
+    font-family: 'Original Surfer', cursive;
 }
-
+.formHeading{
+    font-family: 'Bitter', serif;
+}
 .homepage{
     align-items: center;
     display: flex;
@@ -23,6 +26,7 @@ main{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     flex-direction: column;
     margin: 0 90px;
+    border-radius: 25px;
 }
 .formContainer{
     display: flex;
@@ -46,7 +50,7 @@ main{
 
 }
 
-form{
+.loginForm form{
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -55,33 +59,41 @@ form{
     width: 100%;
 }
 
-input, select{
+.loginForm input, .loginForm select{
     width: 300px;
     padding: 5px 10px;
     margin: 5px 20px;
     font-size: 18px;
+    font-family: 'Bitter', serif;
+
 }
 .pd-90{
     padding: 0 90px;
 }
 
-label{
+.loginForm label{
     width: 300px;
+    font-family: 'Bitter', serif;
+
     margin-top:15px;
 }
-
-button{
+.loginForm p{
+    font-family: poppins;
+}
+.loginForm button{
     background: #3380EF;
-    padding: 10px 15px;
+    padding: 10px 30px;
     font-size: 18px;
     border: 0;
     border-radius: 20px;
+    font-family: 'Bitter', serif;
+
     color: white;
     cursor: pointer;
     margin: 10px;
 }
 
-form span{
+.loginForm form span{
     color: red;
     cursor: pointer;
 }

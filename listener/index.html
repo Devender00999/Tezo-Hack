@@ -7,14 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Media Player</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Archivo:wght@200&family=Bitter:wght@300&family=Cairo:wght@200&family=Girassol&family=Josefin+Sans&family=New+Tegomin&family=Original+Surfer&family=Poppins:wght@200&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Media Player</title>
 </head>
 
 <body>
     <main>
         <nav>
-            <h1 class="tagLine">SO MUCH MUSIC TOO LITTLE TIME</h1>
+            <h1 class="tagLine">So Much Music Too Little Time</h1>
             <div class="profile">
                 <h1>Robert Downey</h1>
                 <img src="../images/userImage.jpg" alt="profile">
@@ -99,12 +104,12 @@
                     </table>
                 </div>
                 <div class="mediaControl">
-                    <div class="length">
-                        <div class="progress">
-                            <span></span>
-                        </div>
+                    <progress value="25" max="100"></progress>
+                    <div class="control">
+                        <span id="prev">Previous</span>
+                        <i class="fa fa-play-circle"></i>
+                        <span id="next">Next</span>
                     </div>
-                    <div class="control"></div>
                 </div>
             </div>
 

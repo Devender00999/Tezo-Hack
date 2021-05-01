@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Girassol&family=Josefin+Sans&family=New+Tegomin&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../artist/artist.css">
     <title>Media Player</title>
@@ -16,7 +18,7 @@
 <body>
     <main>
         <nav>
-            <h1 class="tagLine">SO MUCH MUSIC TOO LITTLE TIME</h1>
+            <h1 class="tagLine">So Much Music Too Little Time</h1>
             <div class="profile">
                 <h1>Robert Downey</h1>
                 <img src="../images/userImage.jpg" alt="profile">
@@ -80,28 +82,28 @@
                     <table>
                         <thead>
                             <th>Song Name</th>
-                            <th>Singer</th>
-                            <th>Duration</th>
+                            <th>Streams</th>
+                            <th>View Time(M)</th>
                         </thead>
                         <tr>
                             <td><i class="fa fa-play-circle-o"></i>Closer</td>
-                            <td>The Chainsmokers</td>
-                            <td>04:04</td>
+                            <td>45484</td>
+                            <td>63</td>
                         </tr>
                         <tr>
                             <td><i class="fa fa-play-circle-o"></i>Love Your Self</td>
-                            <td>Justin Beiber</td>
-                            <td>03:53</td>
+                            <td>58254</td>
+                            <td>68</td>
                         </tr>
                         <tr>
                             <td><i class="fa fa-play-circle-o"></i>Photograph</td>
-                            <td>Ed Sheeran</td>
-                            <td>04:18</td>
+                            <td>48484</td>
+                            <td>86</td>
                         </tr>
                     </table>
                 </div>
                 <div class="artistOptions">
-                    <div class="uploadSong">
+                    <div class="uploadSong" onclick="handlePopup('uploadForm')">
                         <i class="fa fa-plus"></i>
                         <span>Upload Song</span>
                     </div>
@@ -118,7 +120,56 @@
         </div>
 
     </main>
+    <div id="uploadForm" class="pop-up">
+        <form action="">
+            <h3>New Music? Yay!!!</h3>
+            <input type="text" placeholder="Name" name="" id="">
+            <select name="song_type" id="">
+                <option value="" selected>Select Song Genre</option>
+                <option value="pop">Pop</option>
+                <option value="rock">Rock</option>
+                <option value="Jazz">Jazz</option>
+                <option value="hiphop">Hip Hop</option>
+                <option value="country">Country</option>
+            </select>
+            <input type="text" placeholder="Artist" name="" id="">
+            <div>
+                <label for="file">Select Your Song</label>
+                <input type="file" name="" id="file">
+            </div>
+            <div>
+                <label for="file">Select Cover Image</label>
+                <input type="file" name="" id="file">
+            </div>
+            <input type="submit" value="Upload Song">
+        </form>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var popUps = document.getElementsByClassName("pop-up");
+    var popUpStates = {};
+    for(let i = 0; i < popUps.length; i++)
+    {
+        popUpStates[popUps[i].id] = true;
+    }
+
+    function handlePopup(id)
+    {
+        var box = document.getElementById(id);
+        if(popUpStates[id]){
+            popUpStates[id] = false;
+            box.style.visibility = "hidden";
+            box.style.transform = "scale(0)";
+        }
+
+        else{
+            popUpStates[id] = true;
+            box.style.transform = "scale(1)";
+            box.style.visibility = "visible";
+            box.style.display="block";
+        }
+    }
+    </script>
 </body>
 
 </html>
