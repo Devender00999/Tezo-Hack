@@ -26,12 +26,15 @@ main{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     flex-direction: column;
     margin: 0 90px;
+    width: 100%;
     border-radius: 25px;
 }
 .formContainer{
     display: flex;
     padding: 0 90px;
     padding-bottom: 20px;
+    width: 100%;
+
 }
 .imageContainer{
     display: flex;
@@ -64,6 +67,7 @@ main{
     padding: 5px 10px;
     margin: 5px 20px;
     font-size: 18px;
+    outline: 0;
     font-family: 'Bitter', serif;
 
 }
