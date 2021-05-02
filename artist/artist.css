@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
+    z-index: 4;
 }
 
 .uploadSong, .viewWallet{
@@ -53,40 +55,75 @@
 
 .pop-up{
     position: absolute;
-    top: 50%;
+    bottom: 110px;
     left: 50%;
-    transform: translateX(-50%) translateY(0);
+    transform:translateX(-50%) translateY(110%);
     border-radius: 25px;
     box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
     transition: all ease-in-out 0.2s;
     visibility: hidden;
     background: white;
     z-index: 2;
+    
 }
 
 #uploadForm{
-    width: 500px;
-    height: 350px;
+    width: max-content;
+    height: max-content;
 }
 
 #uploadForm form{
     padding: 30px;
     height: 100%;
     display: flex;
-    row-gap: 15px;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-#uploadForm form h3{
+#uploadForm form h2{
     margin-top: 0;
     margin-bottom: 0;
     text-align: center;
 }
 
-#uploadForm form input[type="text"]{
+/* #uploadForm form input[type="text"]{
     border: none;
     border-bottom: 2px solid black;
     background: #e7e7e7;
     padding: 10px;
     font-size: 16px;
+} */
+
+#uploadForm input, #uploadForm select{
+    width: 300px;
+    padding: 5px 10px;
+    font-size: 18px;
+    outline: 0;
+    font-family: 'Bitter', serif;
+
+}
+
+#uploadForm label{
+    width: 300px;
+    font-family: 'Bitter', serif;
+    margin-top:15px;
+}
+
+#uploadForm input[type="file"]
+{
+    padding: 5px 0;
+}
+
+#uploadForm button{
+    background: #3380EF;
+    padding: 10px 30px;
+    font-size: 18px;
+    border: 0;
+    border-radius: 20px;
+    font-family: 'Bitter', serif;
+
+    color: white;
+    cursor: pointer;
+    margin: 10px;
 }

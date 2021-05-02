@@ -107,12 +107,62 @@
                         <i class="fa fa-plus"></i>
                         <span>Upload Song</span>
                     </div>
-                    <div class="viewWallet">
+                    <div class="viewWallet" onclick="handlePopup('wallet')">
                         <div class="icon">
                             <img src="../images/tez.svg">
                         </div>
                         <span>View Wallet</span>
                     </div>
+                    
+                </div>
+                <div id="uploadForm" class="pop-up">
+                    <form action="">
+                        <h2>New Music? Yay!!!</h2>
+                        <label for="for">Name</label>
+                        <input type="text" placeholder="Name" name="" id="">
+                        <label for="for">Name</label>
+                        <select name="song_type" id="">
+                            <option value="" selected>Select Song Genre</option>
+                            <option value="pop">Pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="hiphop">Hip Hop</option>
+                            <option value="country">Country</option>
+                        </select>
+                        <label for="for">Name</label>
+
+                        <input type="text" placeholder="Artist" name="" id="">
+                            <label for="file">Select Your Song</label>
+                            <input type="file" name="" id="file">
+                            <label for="file">Select Cover Image</label>
+                            <input type="file" name="" id="file">
+                        <button type="submit">Upload Song</button>
+                    </form>
+                </div>
+
+                <div id="wallet" class="pop-up">
+                    <form action="">
+                        <h2>Hey User</h2>
+                        <label for="for">Name</label>
+                        <input type="text" placeholder="Name" name="" id="">
+                        <label for="for">Name</label>
+                        <select name="song_type" id="">
+                            <option value="" selected>Select Song Genre</option>
+                            <option value="pop">Pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="hiphop">Hip Hop</option>
+                            <option value="country">Country</option>
+                        </select>
+                        <label for="for">Name</label>
+
+                        <input type="text" placeholder="Artist" name="" id="">
+                            <label for="file">Select Your Song</label>
+                            <input type="file" name="" id="file">
+                            <label for="file">Select Cover Image</label>
+                            <input type="file" name="" id="file">
+                        <button type="submit">Upload Song</button>
+                    </form>
                 </div>
             </div>
 
@@ -120,37 +170,14 @@
         </div>
 
     </main>
-    <div id="uploadForm" class="pop-up">
-        <form action="">
-            <h3>New Music? Yay!!!</h3>
-            <input type="text" placeholder="Name" name="" id="">
-            <select name="song_type" id="">
-                <option value="" selected>Select Song Genre</option>
-                <option value="pop">Pop</option>
-                <option value="rock">Rock</option>
-                <option value="Jazz">Jazz</option>
-                <option value="hiphop">Hip Hop</option>
-                <option value="country">Country</option>
-            </select>
-            <input type="text" placeholder="Artist" name="" id="">
-            <div>
-                <label for="file">Select Your Song</label>
-                <input type="file" name="" id="file">
-            </div>
-            <div>
-                <label for="file">Select Cover Image</label>
-                <input type="file" name="" id="file">
-            </div>
-            <input type="submit" value="Upload Song">
-        </form>
-    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         var popUps = document.getElementsByClassName("pop-up");
     var popUpStates = {};
     for(let i = 0; i < popUps.length; i++)
     {
-        popUpStates[popUps[i].id] = true;
+        popUpStates[popUps[i].id] = false;
     }
 
     function handlePopup(id)
@@ -159,12 +186,12 @@
         if(popUpStates[id]){
             popUpStates[id] = false;
             box.style.visibility = "hidden";
-            box.style.transform = "scale(0) translateX(-50%) translateY(0%)";
+            box.style.transform = "translateX(-50%) translateY(100%)";
         }
 
         else{
             popUpStates[id] = true;
-            box.style.transform = "scale(1) translateX(-50%) translateY(0%)";
+            box.style.transform = `translateX(-50%) translateY(0%)`;
             box.style.visibility = "visible";
             box.style.display="block";
         }

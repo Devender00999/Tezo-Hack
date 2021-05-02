@@ -18,7 +18,7 @@ nav {
 
 h1 {
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Fredericka the Great', cursive;
     font-weight: 300;
 }
 
@@ -99,7 +99,7 @@ nav img {
     border-radius: 0px 10px 10px 0px;
     cursor: pointer;
     padding: 3px 15px;
-    width: max-content;
+    width: 200px;
     
 }
 
@@ -118,7 +118,7 @@ nav img {
 .songList {
     flex: 3;
     background: #3380ef;
-    font-family: 'Girassol', cursive;
+    
     background: #2B2D42;
 }
 
@@ -132,6 +132,8 @@ nav img {
     padding: 10px;
     text-align: left;
     color: #EDF2F4;
+    font-family: 'Fredericka the Great', cursive;
+
 }
 
 .songList td {
@@ -183,6 +185,7 @@ progress{
     font-size: 15px;
     position: relative;
     font-family: 'Josefin Sans', sans-serif;
+    width: 90px;
     
 }
 #prev{
