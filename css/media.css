@@ -3,14 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    overflow: hidden;
+    position: relative;
+}
 nav {
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 10px;
     align-items: center;
-    background: #3380ef;
+    background: #8D99AE;
 }
 
 h1 {
@@ -46,7 +49,7 @@ nav img {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #DDE9FF;
+    background-color: #2B2D42;
     padding: 25px;
 }
 
@@ -57,11 +60,17 @@ nav img {
     position: relative;
 }
 
-.search img {
+.search i {
     width: 60px;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 60px;
+    background: white;
     border-radius: 50%;
     left: 0px;
+    color: #0D61FF;
     z-index: 1;
     position: relative;
 }
@@ -69,9 +78,10 @@ nav img {
 .search input {
     font-size: 18px;
     outline: 0;
-    border: 0;
+    border: 2px solid #EF233C;
     left: -10px;
     position: relative;
+    background-color: rgba(239, 35, 60, 0.5);
     border-radius: 0px 25px 25px 0px;
     padding: 10px 10px 10px 12px;
 }
@@ -100,7 +110,7 @@ nav img {
 
 .player {
     flex: 3;
-    background-color: antiquewhite;
+    background-color: #EDF2F4;
     display: flex;
     flex-direction: column;
 }
@@ -109,6 +119,7 @@ nav img {
     flex: 3;
     background: #3380ef;
     font-family: 'Girassol', cursive;
+    background: #2B2D42;
 }
 
 .songList table {
@@ -120,11 +131,13 @@ nav img {
     font-size: 25px;
     padding: 10px;
     text-align: left;
+    color: #EDF2F4;
 }
 
 .songList td {
     padding: 2px 10px;
     font-size: 20px;
+    color: #EDF2F4;
     font-family: 'New Tegomin', serif;
 }
 
@@ -133,7 +146,7 @@ nav img {
 }
 
 .mediaControl {
-    background: yellow;
+    background: #8D99AE;
     flex: .7;
     display: flex;
     flex-direction: column;
@@ -156,15 +169,16 @@ progress{
     font-size: 60px;
     color: white;
     cursor: pointer;
-
+    z-index: 1;
 
 
 }
 .control span{
     padding: 7px 20px;
-    background: white;
-    width: 80px;
+    background-color: rgba(239, 35, 60, 0.5);
+    border: 2px solid #EF233C;    width: 80px;
     cursor: pointer;
+    
     text-align:center;
     font-size: 15px;
     position: relative;
