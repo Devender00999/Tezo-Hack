@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../css/media.css">
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Girassol&family=Josefin+Sans&family=New+Tegomin&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../artist/artist.css">
     <title>Media Player</title>
@@ -18,7 +19,7 @@
 <body>
     <main>
         <nav>
-            <h1 class="tagLine">So Much Music Too Little Time</h1>
+            <h1 class="tagLine">Genesis X</h1>
             <div class="profile">
                 <h1>Robert Downey</h1>
                 <img src="../images/userImage.jpg" alt="profile">
@@ -32,7 +33,7 @@
                 </div>
                 <div class="genresList">
                     <h1>Genres</h1>
-                    <div class="genre">
+                    <div class="genre selected">
                         <i class="fa fa-music"></i>
                         <h2>Hip Hop</h2>
                     </div>
@@ -56,6 +57,26 @@
                         <i class="fa fa-music"></i>
                         <h2>Indie Rock</h2>
                     </div>
+                    <div class="genre">
+                        <i class="fa fa-music"></i>
+                        <h2>Reggaeton</h2>
+                    </div>
+                    <div class="genre">
+                        <i class="fa fa-music"></i>
+                        <h2>Bollywood</h2>
+                    </div>
+                    <div class="genre">
+                        <i class="fa fa-music"></i>
+                        <h2>Fork</h2>
+                    </div>
+                </div>
+                <div class="settings">
+                    <div class="buttons" onclick="location.href ='../listener/index.html'";>
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                    <div class="buttons" onclick="location.href='../index.html'">
+                        <i class="fa fa-power-off"></i>
+                    </div>
                 </div>
             </div>
             <div class="player">
@@ -65,15 +86,14 @@
                     <input type="radio" name="slider" id="item-3">
                     <div class="cards">
                         <label class="card" for="item-1" id="song-1">
-                            <img src="https://images.unsplash.com/photo-1530651788726-1dbf58eeef1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80"
+                            <img src="../songs/closer.jpg"
                                 alt="song">
                         </label>
                         <label class="card" for="item-2" id="song-2">
-                            <img src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
-                                alt="song">
+                            <img src="../songs/perfect.jpeg"alt="song">
                         </label>
                         <label class="card" for="item-3" id="song-3">
-                            <img src="https://images.unsplash.com/photo-1533461502717-83546f485d24?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+                            <img src="../songs/loveYourSelf.png"
                                 alt="song">
                         </label>
                     </div>
@@ -91,7 +111,7 @@
                             <td>63</td>
                         </tr>
                         <tr>
-                            <td><i class="fa fa-play-circle-o"></i>Love Your Self</td>
+                            <td><i class="fa fa-play-circle-o"></i>Love Yourself</td>
                             <td>58254</td>
                             <td>68</td>
                         </tr>
@@ -141,28 +161,12 @@
                 </div>
 
                 <div id="wallet" class="pop-up">
-                    <form action="">
-                        <h2>Hey User</h2>
-                        <label for="for">Name</label>
-                        <input type="text" placeholder="Name" name="" id="">
-                        <label for="for">Name</label>
-                        <select name="song_type" id="">
-                            <option value="" selected>Select Song Genre</option>
-                            <option value="pop">Pop</option>
-                            <option value="rock">Rock</option>
-                            <option value="Jazz">Jazz</option>
-                            <option value="hiphop">Hip Hop</option>
-                            <option value="country">Country</option>
-                        </select>
-                        <label for="for">Name</label>
-
-                        <input type="text" placeholder="Artist" name="" id="">
-                            <label for="file">Select Your Song</label>
-                            <input type="file" name="" id="file">
-                            <label for="file">Select Cover Image</label>
-                            <input type="file" name="" id="file">
-                        <button type="submit">Upload Song</button>
-                    </form>
+                    <h2>Wallet Details</h2>
+                    <h3>Total View Time: <span>217</span></h3>
+                    
+                    <h3>Corresponding Tezos: <span>2.17</span></h3>
+                    <button>Withdraw tezos</button>
+                </div>
                 </div>
             </div>
 

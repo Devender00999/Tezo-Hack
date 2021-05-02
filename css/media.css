@@ -13,13 +13,29 @@ nav {
     justify-content: space-between;
     padding: 10px;
     align-items: center;
-    background: #8D99AE;
+    background: #050f2c;
+    border-bottom: 2px solid rgba(255,255,255,.1);;
 }
 
 h1 {
     color: white;
-    font-family: 'Fredericka the Great', cursive;
     font-weight: 300;
+    font-family: 'Balsamiq Sans', cursive;
+}
+nav > h1{
+    color: white;
+    font-weight: bolder;
+    -webkit-text-fill-color: transparent;
+    font-size: 32px;
+    background: linear-gradient(
+124deg
+, #a3b7ef, #ef3939);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: 'Balsamiq Sans', cursive;
+    margin-left: 25px;
+    margin-top: 15px;
+    
 }
 
 nav img {
@@ -49,8 +65,9 @@ nav img {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #2B2D42;
+    background: #050f2c;
     padding: 25px;
+    border-right:2px solid rgba(255,255,255,.1);
 }
 
 .search {
@@ -70,7 +87,7 @@ nav img {
     background: white;
     border-radius: 50%;
     left: 0px;
-    color: #0D61FF;
+    color: #ef3939;
     z-index: 1;
     position: relative;
 }
@@ -78,48 +95,47 @@ nav img {
 .search input {
     font-size: 18px;
     outline: 0;
-    border: 2px solid #EF233C;
     left: -10px;
     position: relative;
-    background-color: rgba(239, 35, 60, 0.5);
+    background: linear-gradient(45deg, #ef3939, #0d61ff);
+    color: white;
+    border: 0;
     border-radius: 0px 25px 25px 0px;
     padding: 10px 10px 10px 12px;
 }
 
 .genres .genresList {
     font: 18px;
-    padding: 10px 25px;
+    padding: 40px 25px;
 }
 
 .genre {
     display: flex;
     align-items: center;
-    margin: 10px;
-    background: white;
+    margin: 18px 10px;
+    background: rgba(255,255,255,.1);
+    color: white;
     border-radius: 0px 10px 10px 0px;
     cursor: pointer;
-    padding: 3px 15px;
+    padding: 5px 15px;
     width: 200px;
     
 }
 
 .genre h2 {
     padding: 0 10px;
-    font-family: 'New Tegomin', serif;
-}
+    font-family: 'Nanum Gothic', sans-serif;}
 
 .player {
     flex: 3;
-    background-color: #EDF2F4;
+    background: #050f2c;
     display: flex;
     flex-direction: column;
 }
 
 .songList {
-    flex: 3;
-    background: #3380ef;
-    
-    background: #2B2D42;
+    flex: 2.5;
+    background: #050f2c;
 }
 
 .songList table {
@@ -132,7 +148,7 @@ nav img {
     padding: 10px;
     text-align: left;
     color: #EDF2F4;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Balsamiq Sans', cursive;
 
 }
 
@@ -140,23 +156,23 @@ nav img {
     padding: 2px 10px;
     font-size: 20px;
     color: #EDF2F4;
-    font-family: 'New Tegomin', serif;
-}
+    font-family: 'Nanum Gothic', sans-serif;}
 
 .songList td i {
     padding-right: 5px;
 }
 
 .mediaControl {
-    background: #8D99AE;
+    background: #050f2c;
     flex: .7;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-progress{
+.mediaControl input{
     width: 80%;
     height: 20px;
 }
@@ -176,11 +192,12 @@ progress{
 
 }
 .control span{
-    padding: 7px 20px;
-    background-color: rgba(239, 35, 60, 0.5);
-    border: 2px solid #EF233C;    width: 80px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ef3939, #0d61ff);
+    border: 0;
     cursor: pointer;
-    
+    color: white;
+    font-weight: bold;
     text-align:center;
     font-size: 15px;
     position: relative;
@@ -190,14 +207,18 @@ progress{
 }
 #prev{
     border-radius: 20px 0 0 20px;
-    right: -5px;
+    right: -7px;
 }
 
 #next{
     border-radius: 0 20px 20px 0px;
-    right: 5px;
+    right: 7px;
 
     
+}
+.selected{
+    background: linear-gradient(45deg, #ef3939, #0d61ff);
+    color: white
 }
 /* Music Carousel Section */
 
@@ -223,11 +244,10 @@ progress{
 
 .currentPlayer {
     width: 100%;
-    flex: 2;
+    flex: 2.5;
     max-width: 100%;
     max-height: 600px;
     height: 100%;
-    flex: 2;
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
@@ -245,10 +265,57 @@ progress{
 }
 
 .card img {
-    width: 100%;
-    height: 100%;
+    width: 180px;
+    height: 180px;
     border-radius: 10px;
     object-fit: cover;
+}
+
+.settings
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;    
+}
+.settings i{
+    position: relative;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 1;
+    color: #0D61FF;
+    cursor: pointer;
+    font-weight: 100;
+    background-color: white;
+    border: 2px solid white;
+}
+.buttons{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media(max-height:768px)
+{
+    .card img{
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media(max-height: 1024px) and (min-height: 769px)
+{
+    .card img{
+        width: 250px;
+        height: 250px;
+    }
 }
 
 #item-1:checked~.cards #song-3, #item-2:checked~.cards #song-1, #item-3:checked~.cards #song-2 {
