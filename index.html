@@ -13,8 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Archivo:wght@200&family=Bitter:wght@300&family=Cairo:wght@200&family=Girassol&family=Josefin+Sans&family=New+Tegomin&family=Original+Surfer&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <title>Genesis X</title>
-    <script src="../js/login.js"></script>
-    <script src="../js/signup.js"></script>
+
 </head>
 
 <body>
@@ -27,7 +26,7 @@
         
                 </div>
                 <div class="loginForm">
-                    <form id ="login">
+                    <div id ="login">
                         <h1 class="formHeading">Login</h1>
                         <label for="lemail">Email</label>
                         <input type="email" id="lemail" name="lemail" placeholder="Enter Your Email" required>   
@@ -35,7 +34,7 @@
                         <input type="password" name="lpassword" id="lpassword" placeholder="Enter Your Password" required>
                         <button id="lsubmit" type="submit">Login</button>
                         <p>Don't have an Account? <span id="signupBtn" onclick="showSignup();">Sign Up</span></p>
-                    </form>
+                    </div>
 
                     <form id="register" name="google-form" method = "post">
                         <h1 class="formHeading">Register</h1>
@@ -76,6 +75,8 @@
             console.log("working");
         }
     </script>
+    <script src="../js/login.js"></script>
+    <script src="../js/signup.js"></script>
 </body>
 
 </html>
