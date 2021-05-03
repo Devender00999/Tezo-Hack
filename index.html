@@ -27,28 +27,28 @@
                 <div class="loginForm">
                     <form id ="login" method="GET" action="listener/index.html">
                         <h1 class="formHeading">Login</h1>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter Your Email" required>   
+                        <label for="lemail">Email</label>
+                        <input type="email" id="lemail" name="lemail" placeholder="Enter Your Email" required>   
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
-                        <button type="submit">Login</button>
+                        <input type="password" name="lpassword" id="lpassword" placeholder="Enter Your Password" required>
+                        <button id="lsubmit" type="submit">Login</button>
                         <p>Don't have an Account? <span id="signupBtn" onclick="showSignup();">Sign Up</span></p>
                     </form>
 
                     <form id="register" action="#">
                         <h1 class="formHeading">Register</h1>
                         
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required>   
+                        <label for="rname">Name</label>
+                        <input type="text" id="rname" name="rname" placeholder="Enter your name" required>   
                         
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>   
+                        <label for="remail">Email</label>
+                        <input type="email" id="remail" name="remail" placeholder="Enter your email" required>   
                         
 
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Enter your password">
+                        <label for="rpassword">Password</label>
+                        <input type="password" name="rpassword" id="rpassword" placeholder="Enter your password">
                         
-                        <button type="submit">Register</button>
+                        <button id="rbutton" type="submit">Register</button>
                         <p>Already a user? <span id="loginBtn" onclick="showLogin()">Login</span></p>
                     </form>
                 </div>
