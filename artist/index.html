@@ -25,7 +25,7 @@
         <nav>
             <h1 class="tagLine">Genesis X</h1>
             <div class="profile">
-                <h1>Robert Downey</h1>
+                <h1 id="name"></h1>
                 <img src="../images/userImage.jpg" alt="profile">
             </div>
         </nav>
@@ -186,7 +186,10 @@
                 box.style.display = "block";
             }
         }
+        document.getElementById("name").innerText=sessionStorage.getItem('name');
+
     </script>
+    
     <script src="./artist.js"></script>
 </body>
 

@@ -33,7 +33,7 @@
         <nav>
             <h1 class="tagLine">Genesis X</h1>
             <div class="profile" onclick="location.href='../artist/index.html'" style="cursor: pointer;">
-                <h1>Robert Downey</h1>
+                <h1 id="name"><script></script></h1>
                 <img src="../images/userImage.jpg" alt="profile">
             </div>
         </nav>
@@ -136,6 +136,9 @@
 
         
     </script>
+    <script>
+        document.getElementById("name").innerText=sessionStorage.getItem('name');
+        console.log(sessionStorage.getItem('name'))</script>
 </body>
 
 </html>

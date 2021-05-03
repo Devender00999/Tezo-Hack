@@ -107,6 +107,7 @@ nav img {
 .genres .genresList {
     font: 18px;
     padding: 40px 25px;
+    overflow-y: auto;
 }
 
 .genre {

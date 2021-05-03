@@ -17,12 +17,14 @@ fetch(
                 flag1 = 1;
                 if(pass.value === Account[i]["gsx$password"]["$t"]){
                     flag2 = 1;
+                    sessionStorage.setItem('name',Account[i]["gsx$name"]["$t"]);
                     window.location.href = "./listener/";
                 }
             }
         }
-        if(flag1 == -1 || flag == -1){
+        if(flag1 == -1 || flag2 == -1){
+            console.log(Account[0]["gsx$password"]["$t"]);
             alert("Email or Password not found");
-        }
+        }   
     })
 })
