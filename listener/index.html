@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+    <script>
+        if (sessionStorage.getItem("isLogined") === "0")
+        {
+            window.location.href = "../index.html";
+            console.log("login",sessionStorage.getItem("isLogined"));
+
+        }
+        else{
+            sessionStorage.getItem("isLogined") ;
+            console.log("logout",sessionStorage.getItem("isLogined"));
+        }
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +44,7 @@
     <main>
         <nav>
             <h1 class="tagLine">Genesis X</h1>
-            <div class="profile" onclick="location.href='../artist/index.html'" style="cursor: pointer;">
+            <div class="profile" onclick="window.location.href='../artist/index.html';" style="cursor: pointer;">
                 <h1 id="name"><script></script></h1>
                 <img src="../images/userImage.jpg" alt="profile">
             </div>
@@ -83,7 +95,7 @@
                     </div>
                 </div>
                 <div class="settings">
-                    <div class="buttons" onclick="location.href='../index.html'">
+                    <div class="buttons" onclick="logout();">
                         <i class="fa fa-power-off"></i>
                     </div>
                 </div>
@@ -133,12 +145,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="../js/script.js">
-
+    
         
     </script>
     <script>
         document.getElementById("name").innerText=sessionStorage.getItem('name');
-        console.log(sessionStorage.getItem('name'))</script>
+        console.log(sessionStorage.getItem('name'))
+        function logout()
+        {
+            sessionStorage.setItem('isLogined',0);
+            window.location.href='../index.html';
+        }
+    </script>
 </body>
 
 </html>

@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+    <script>
+        if (sessionStorage.getItem("isLogined") === "0")
+        {
+            window.location.href = "../index.html";
+            console.log("login",sessionStorage.getItem("isLogined"));
+
+        }
+        else{
+            sessionStorage.getItem("isLogined") ;
+            console.log("logout",sessionStorage.getItem("isLogined"));
+        }
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,7 +90,7 @@
                     <div class="buttons" onclick="location.href ='../listener/index.html'" ;>
                         <i class="fa fa-arrow-left"></i>
                     </div>
-                    <div class="buttons" onclick="location.href='../index.html'">
+                    <div class="buttons" onclick="logout();">
                         <i class="fa fa-power-off"></i>
                     </div>
                 </div>
@@ -187,7 +199,11 @@
             }
         }
         document.getElementById("name").innerText=sessionStorage.getItem('name');
-
+        function logout()
+        {
+            sessionStorage.setItem('isLogined',0);
+            window.location.href='../index.html';
+        }
     </script>
     
     <script src="./artist.js"></script>
