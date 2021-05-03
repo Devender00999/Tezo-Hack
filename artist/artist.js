@@ -182,3 +182,14 @@ function chooseSong(id)
     var chosen = document.getElementById(id);
     chosen.classList.add("musicSelected");
 }
+
+
+
+var rbutton = document.getElementById("rbutton");
+var rname = document.getElementById("rname");
+var remail = document.getElementById("remail");
+var rpassword = document.getElementById("rpassword");
+
+var lbutton = document.getElementById("lbutton");
+var lname = document.getElementById("rname");
+var lpassword = document.getElementById("lpassword");
