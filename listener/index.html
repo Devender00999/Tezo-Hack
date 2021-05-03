@@ -93,47 +93,33 @@
                     <input type="radio" name="slider" onclick="playPrev()" id="item-1" checked disabled>
                     <input type="radio" name="slider" onclick="playSong()" id="item-2" disabled>
                     <input type="radio" name="slider" onclick="playPrev()" id="item-3" disabled>
-                    <div class="cards">
+                    <div class="cards" id="cards">
                         <label class="card" for="item-1" id="song-1">
-                            <img src="../songs/closer.jpg" alt="song">
+                            <img>
                         </label>
                         <label class="card" for="item-2" id="song-2">
-                            <img src="../songs/perfect.jpeg" alt="song">
+                            <img>
                         </label>
                         <label class="card" for="item-3" id="song-3">
-                            <img src="../songs/loveYourSelf.png" alt="song">
+                            <img >
                         </label>
+
+
                     </div>
                 </div>
-                <div class="songList">
-                    <table>
-                        <thead>
-                            <th>Song Name</th>
-                            <th>Singer</th>
-                            <th>Duration</th>
-                        </thead>
-                        <tr>
-                            <td><i class="fa fa-play-circle-o"></i>Closer</td>
-                            <td>The Chainsmokers</td>
-                            <td>04:04</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-play-circle-o"></i>Love Yourself</td>
-                            <td>Justin Bieber</td>
-                            <td>03:53</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-play-circle-o"></i>Photograph</td>
-                            <td>Ed Sheeran</td>
-                            <td>04:18</td>
-                        </tr>
-                    </table>
+                <div class="songList" id="songList">
+                        <div class="songsHeading"  style="font-family: 'Balsamiq Sans', cursive;">
+                            <span id= "songHeading">Song Name</span>
+                            <span id= "artistHeading" >Singer</span>
+                            <span id= "durationHeading">Duration</span>
+                        </div>
+
                 </div>
                 <div class="mediaControl">
-                    <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="100" value="1">
+                    <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="100" value="0">
                     <div class="control">
                         <span id="prev" onclick="playPrev()">Previous</span>
-                        <i id="playBtn" class="fa fa-play-circle" onclick="playSong();"></i>
+                        <i id="playBtn" class="fa fa-play-circle" onkeypress="" onclick="playSong();"></i>
                         <span id="next" onclick="playNext()">Next</span>
                     </div>
                 </div>
@@ -146,59 +132,9 @@
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
-        var songs = ["../songs/Closer.mp3", "../songs/Photograph.mp3", "../songs/Love Yourself.mp3"]
-        var isPlaying = false;
-        var audioPlayer = document.getElementById("audioPlayer");
-        var songNumber = 0;
-        var playBtn = document.getElementById("playBtn");
+    <script src="../js/script.js">
 
-        var carousel = document.querySelectorAll(".currentPlayer  > input");
-
-
-        function playSong() {
-            audioPlayer.src = songs[songNumber];
-            console.log(songNumber);
-            if (isPlaying) {
-                isPlaying = false;
-                playBtn.classList.add("fa-play-circle");
-                playBtn.classList.remove("fa-pause-circle");
-                carousel[songNumber].checked = true;
-                audioPlayer.pause();
-            }
-            else {
-                isPlaying = true;
-                audioPlayer.play();
-                carousel[songNumber].checked = true;
-                playBtn.classList.add("fa-pause-circle");
-                playBtn.classList.remove("fa-play-circle");
-
-            }
-        }
-
-        function playNext() {
-            songNumber = songNumber > songs.length - 2 ? songNumber = 0 : songNumber += 1;
-            audioPlayer.src = songs[songNumber];
-            console.log(songs[songNumber]);
-            if (isPlaying) {
-                audioPlayer.pause();
-                isPlaying = 0;
-            }
-            playSong();
-        }
-
-        function playPrev() {
-            songNumber = songNumber < 1 ? songNumber = songs.length - 1 : songNumber -= 1;
-            audioPlayer.src = songs[songNumber];
-            console.log(songNumber);
-            if (isPlaying) {
-                audioPlayer.pause();
-                isPlaying = 0;
-            }
-
-            playSong();
-        }
-
+        
     </script>
 </body>
 

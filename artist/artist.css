@@ -143,3 +143,17 @@
     cursor: pointer;
     margin: 10px;
 }
+button{
+    background: linear-gradient(
+        45deg
+        , #ef3939, #0d61ff);
+            border: 0;
+            position: relative;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 17px;
+            left: -15px;
+            border-radius: 25px;
+            height: 40px;
+            color: #EDF2F4;
+            padding: 10px 25px;
+}

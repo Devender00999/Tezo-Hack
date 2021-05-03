@@ -138,29 +138,86 @@ nav img {
     background: #050f2c;
 }
 
-.songList table {
+.songList {
     width: 100%;
     padding: 0 20px;
+    overflow: auto;
 }
 
-.songList th {
+.songList .songDetails, .songsHeading {
+    width: 100%;
+    display: flex;
     font-size: 25px;
-    padding: 10px;
+    padding: 7px;
     text-align: left;
     color: #EDF2F4;
     font-family: 'Balsamiq Sans', cursive;
+    margin: 5px 0;
+    border-radius: 10px;
+    background: rgba(255,255,255,.1);
 
 }
 
-.songList td {
+.songDetails{
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.songList .songDetails span{
     padding: 2px 10px;
-    font-size: 20px;
+    font-size: 16px;
     color: #EDF2F4;
     font-family: 'Nanum Gothic', sans-serif;}
 
-.songList td i {
+/* .songList td i {
     padding-right: 5px;
+} */
+
+.musicSelected{
+    background: linear-gradient(45deg, #ef3939, #0d61ff) !important;
+    border-radius: 10px;
+    border: 0;
 }
+.songList tr{
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+}
+
+.songName{
+    flex: 2;
+}
+
+.artistName{
+    flex: 1;
+}
+
+.songDuration{
+    flex: 1;
+    text-align: right;
+}
+
+#songHeading{
+    flex: 2;
+    font-size: 25px;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+#artistHeading{
+    flex: 1;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 25px;
+
+}
+#durationHeading{
+    flex: 1;
+    font-family: 'Balsamiq Sans', cursive;
+    text-align: right;
+    font-size: 25px;
+
+}
+
+
 
 .mediaControl {
     background: #050f2c;
@@ -175,6 +232,8 @@ nav img {
 .mediaControl input{
     width: 80%;
     height: 20px;
+    pointer-events: none;
+    transition: all ease 1ms;
 }
 
 
