@@ -108,7 +108,11 @@ main{
     color: red;
     cursor: pointer;
 }
-
+#signupBtn
+{
+    color: red;
+    cursor: pointer;
+}
 #login{
     width: 100%;
     position: absolute;
