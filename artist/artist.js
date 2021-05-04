@@ -1,17 +1,4 @@
-document.body.onkeyup = function(e){
-    if(e.keyCode == 32){
-        playSong();
-    }
-    else if(e.keyCode == 78){
-        playNext();
-    }
-    else if(e.keyCode == 80){
-        playPrev();
-    }
-    else{
-        // console.log(e.keyCode);
-    }
-}
+
 
 var songsList = [
     {name:"Closer", streams:585, cover:"../songs/closer.jpg", url:"../songs/Closer.mp3", streamtime:"41"},
@@ -25,7 +12,6 @@ var carArray = songsList.slice(0,3);
 var isPlaying = false;
 var audioPlayer = document.getElementById("audioPlayer");
 audioPlayer.src = songsList[0].url;
-console.log("Duration: ", audioPlayer);
 var last = 3;
 var prev = songsList.length - 1;
 
@@ -62,7 +48,6 @@ function songPlayer(id)
         {
             a[i].classList.add("musicSelected");
             audioPlayer.src = songsList[i].url;
-            console.log(i);
             playSong();
 
         }
@@ -102,8 +87,6 @@ function playNext() {
     carArray.push(songsList[last]);
     last++;
     prev++;
-
-    console.log(temp);
 
     if(last > songsList.length - 1)
         last = 0;
@@ -145,14 +128,13 @@ function playPrev() {
     if(prev < 0)
         prev = songsList.length - 1;
 
-    console.log(carArray);
     audioPlayer.src = carArray[0].url;;
     let i = 0;
     carouselImage.forEach((e)=>{
         e.src = carArray[i++].cover;
     });
 
-    // console.log(temp);
+
     carouselImage[2].src = songsList[prev].cover; 
 
     playSong();

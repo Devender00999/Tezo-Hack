@@ -9,7 +9,6 @@ fetch(
 .then((data) => {
     var totalAccounts = data["feed"]["entry"].length;
     var Account = data["feed"]["entry"];
-    console.log(Account);
     submit.addEventListener("click", () => {
         let flag1 = -1, flag2 = -1;
         for(let i = 0; i < totalAccounts; i++){

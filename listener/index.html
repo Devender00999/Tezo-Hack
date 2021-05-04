@@ -6,12 +6,10 @@
         if (sessionStorage.getItem("isLogined") === "0")
         {
             window.location.href = "../index.html";
-            console.log("login",sessionStorage.getItem("isLogined"));
 
         }
         else{
             sessionStorage.getItem("isLogined") ;
-            console.log("logout",sessionStorage.getItem("isLogined"));
         }
     </script>
     <meta charset="UTF-8">
@@ -45,7 +43,7 @@
             <h1 class="tagLine">Genesis X</h1>
             <div class="profile" onclick="window.location.href='../artist/index.html';" style="cursor: pointer;">
                 <h1 id="name"></h1>
-                <img src="../images/userImage.jpg" alt="profile">
+                <img src="../images/userImage.png" alt="profile">
             </div>
         </nav>
         <div class="container">

@@ -6,12 +6,10 @@
         if (sessionStorage.getItem("isLogined") === "1")
         {
             window.location.href = "./listener/";
-            console.log("login",sessionStorage.getItem("isLogined"));
 
         }
         else{
             sessionStorage.getItem("isLogined") ;
-            console.log("logout",sessionStorage.getItem("isLogined"));
         }
     </script>
     <meta charset="UTF-8">
@@ -77,14 +75,12 @@
         {
             signupForm.style.transform = "translate(0%)";
             loginForm.style.transform="translateX(-150%)";
-            console.log("working");
         }
 
         function showLogin()
         {
             signupForm.style.transform = "translateX(150%)";
             loginForm.style.transform="translate(0%)";
-            console.log("working");
         }
     </script>
     <script src="./js/login.js"></script>
