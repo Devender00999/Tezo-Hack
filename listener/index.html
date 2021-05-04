@@ -18,7 +18,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/media.css">
-    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
@@ -45,7 +44,7 @@
         <nav>
             <h1 class="tagLine">Genesis X</h1>
             <div class="profile" onclick="window.location.href='../artist/index.html';" style="cursor: pointer;">
-                <h1 id="name"><script></script></h1>
+                <h1 id="name"></h1>
                 <img src="../images/userImage.jpg" alt="profile">
             </div>
         </nav>
@@ -57,41 +56,43 @@
                 </div>
                 <div class="genresList">
                     <h1>Genres</h1>
-                    <div class="genre selected">
-                        <i class="fa fa-music"></i>
-                        <h2>Hip Hop</h2>
-                    </div>
-                    <div class="genre">
-                        <i class="fa fa-music"></i>
-                        <h2>Jazz</h2>
-                    </div>
-                    <div class="genre">
-                        <i class="fa fa-music"></i>
-                        <h2>Rock</h2>
-                    </div>
-                    <div class="genre">
-                        <i class="fa fa-music"></i>
-                        <h2>E.D.M.</h2>
-                    </div>
-                    <div class="genre">
-                        <i class="fa fa-music"></i>
-                        <h2>Disco</h2>
-                    </div>
-                    <div class="genre">
-                        <i class="fa fa-music"></i>
-                        <h2>Indie Rock</h2>
-                    </div>
-                    <div class="genre">
-                        <i class="fa fa-music"></i>
-                        <h2>Reggaeton</h2>
-                    </div>
-                    <div class="genre">
-                        <i class="fa fa-music"></i>
-                        <h2>Bollywood</h2>
-                    </div>
-                    <div class="genre">
-                        <i class="fa fa-music"></i>
-                        <h2>Fork</h2>
+                    <div class="genres-list">
+                        <div class="genre selected">
+                            <i class="fa fa-music"></i>
+                            <h2>Hip Hop</h2>
+                        </div>
+                        <div class="genre">
+                            <i class="fa fa-music"></i>
+                            <h2>Jazz</h2>
+                        </div>
+                        <div class="genre">
+                            <i class="fa fa-music"></i>
+                            <h2>Rock</h2>
+                        </div>
+                        <div class="genre">
+                            <i class="fa fa-music"></i>
+                            <h2>E.D.M.</h2>
+                        </div>
+                        <div class="genre">
+                            <i class="fa fa-music"></i>
+                            <h2>Disco</h2>
+                        </div>
+                        <div class="genre">
+                            <i class="fa fa-music"></i>
+                            <h2>Indie Rock</h2>
+                        </div>
+                        <div class="genre">
+                            <i class="fa fa-music"></i>
+                            <h2>Reggaeton</h2>
+                        </div>
+                        <div class="genre">
+                            <i class="fa fa-music"></i>
+                            <h2>Bollywood</h2>
+                        </div>
+                        <div class="genre">
+                            <i class="fa fa-music"></i>
+                            <h2>Fork</h2>
+                        </div>
                     </div>
                 </div>
                 <div class="settings">
@@ -115,24 +116,25 @@
                         <label class="card" for="item-3" id="song-3">
                             <img >
                         </label>
-
-
                     </div>
                 </div>
-                <div class="songList" id="songList">
-                        <div class="songsHeading"  style="font-family: 'Balsamiq Sans', cursive;">
-                            <span id= "songHeading">Song Name</span>
-                            <span id= "artistHeading" >Singer</span>
-                            <span id= "durationHeading">Duration</span>
-                        </div>
+                <div class="songList" id="songHeadings" style="overflow:unset">
+                    <div class="songsHeading"  style="font-family: 'Balsamiq Sans', cursive;">
+                        <span id= "songHeading">Song Name</span>
+                        <span id= "artistHeading" >Singer</span>
+                        <span id= "durationHeading">Duration</span>
+                    </div>
+                </div>
+                <div class="songList" id = songList >
+                     
 
                 </div>
                 <div class="mediaControl">
-                    <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="100" value="0">
+                    <input type="range" id="progressBar"  onclick="changeTime()" step="0.05" min="0" max="100" value="0">
                     <div class="control">
-                        <span id="prev" onclick="playPrev()">Previous</span>
+                        <span id="prev" onclick="playPrev()">Prev(P)</span>
                         <i id="playBtn" class="fa fa-play-circle" onkeypress="" onclick="playSong();"></i>
-                        <span id="next" onclick="playNext()">Next</span>
+                        <span id="next" onclick="playNext()">Next(N)</span>
                     </div>
                 </div>
             </div>
@@ -150,7 +152,6 @@
     </script>
     <script>
         document.getElementById("name").innerText=sessionStorage.getItem('name');
-        console.log(sessionStorage.getItem('name'))
         function logout()
         {
             sessionStorage.setItem('isLogined',0);

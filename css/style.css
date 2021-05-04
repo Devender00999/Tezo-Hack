@@ -114,18 +114,56 @@ main{
     cursor: pointer;
 }
 #login{
-    width: 100%;
+    width: max-content;
     position: absolute;
     transition: all 300ms ease-in;
     border-radius: 10px;
+    padding: 25px;
     /* transform: translate(-100%); */
     background: white;
 }
 
 #register{
+    width: max-content;
     position: absolute;
     transition: all 300ms ease-in;
     background: white;
     border-radius: 10px;
-    transform: translate(100%);
+    transform: translate(150%);
+    padding: 25px;
+}
+
+
+
+
+
+@media(max-height:768px) {
+    #login, #register{
+        width: max-content;
+        height: max-content;
+        padding: 25px 10px;
+        overflow: hidden;
+    }
+    .loginForm{
+        display: block;
+    }
+
+    #register{
+        padding: 15px;
+    }
+
+    .formContainer{
+    }
+    .imageContainer img{
+        max-height: 400px;
+    }
+    
+
+    .loginForm{
+        display: flex;
+        align-items: center;
+    }
+
+
+
 }

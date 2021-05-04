@@ -9,7 +9,6 @@ document.body.onkeyup = function(e){
         playPrev();
     }
     else{
-        // console.log(e.keyCode);
     }
 }
 
@@ -24,25 +23,24 @@ var songsList = [
 var carArray = songsList.slice(0,3);
 var isPlaying = false;
 var audioPlayer = document.getElementById("audioPlayer");
-audioPlayer.src = songsList[0].url;
-console.log("Duration: ", audioPlayer);
+audioPlayer.src = carArray[0].url;
 var last = 3;
 var prev = songsList.length - 1;
 
 
 var playBtn = document.getElementById("playBtn");
 
+var progressBar = document.getElementById("progressBar");
+
+
 
 var carousel = document.querySelectorAll(".currentPlayer  > input");
 var carouselImage = document.querySelectorAll("#cards  > label > img");
 let i = 0;
 carouselImage.forEach((e)=>{
-    
-
     e.src = carArray[i++].cover;
 })
 carouselImage[2].src = songsList[songsList.length - 1].cover;
-audioPlayer.src = carArray[0].url;
 
 
 var songList = document.getElementById("songList");
@@ -50,12 +48,11 @@ var songList = document.getElementById("songList");
 // for(let i = 0; i < songsList.length; i++)
 var a = document.createElement("audio");
 var num = 0;
-var songTime = [];
-let myPromise;
+
 songsList.forEach((elem)=>{   
             
     songList.innerHTML += `
-    <div class="songDetails" id =${num} onclick = songPlayer(${num})>
+    <div class="songDetails" id =${num} onclick = playASong(${num})>
         <span class="songName"><i class="fa fa-play-circle-o"></i> ${songsList[num].name}</span>
         <span class="artistName">${songsList[num].artist}</span>
         <span class = "songDuration">${songsList[num].duration}</span>
@@ -64,24 +61,34 @@ songsList.forEach((elem)=>{
     num++;
     });
 
-function songPlayer(id)
+
+function playASong(id)
 {
-    var a = document.getElementsByClassName('songDetails');
-    for (let i=0; i<a.length;i++)
+
+    audioPlayer.src = songsList[id].url;
+    if(isPlaying)
     {
-        if (i == id)
-        {
-            a[i].classList.add("musicSelected");
-            audioPlayer.src = songsList[i].url;
-            console.log(i);
-            playSong();
-            // last = 2;
-            // prev = 0
-        }
-        else{
-            a[i].classList.remove("musicSelected");
-        }
+        playSong();
+        playSong();
     }
+    else{
+        playSong();
+    }
+    last = inRange(id + 3, songsList.length);
+    prev = inRange(id - 1, songsList.length);
+    var next = inRange(id + 1, songsList.length);
+
+    carArray[0] = songsList[id];
+    carArray[1] = songsList[next]
+    carArray[2] = songsList[inRange(id+2, songsList.length)]
+
+
+    carouselImage[0].src = carArray[0].cover;
+    carouselImage[1].src = carArray[1].cover;
+    carouselImage[2].src = songsList[prev].cover;
+    selectedSong(inRange(prev+1, songsList.length));
+
+
 }
 
 
@@ -94,13 +101,16 @@ function playSong() {
         audioPlayer.pause();
     }
     else {
-        isPlaying = true;
 
+        isPlaying = true;
+        var currentPlaying = document.getElementById(inRange(prev+1, songsList.length));
+
+        currentPlaying.classList.add("musicSelected");
         audioPlayer.play();
         carousel[0].checked = true;
         playBtn.classList.add("fa-pause-circle");
         playBtn.classList.remove("fa-play-circle");
-        setInterval(change_vol,1000);
+        setInterval(changeProgress,1000);
     }
 }
 
@@ -109,22 +119,18 @@ function playNext() {
         audioPlayer.pause();
         isPlaying = 0;
     }
-
+    
     let temp = carArray.shift();
     carArray.push(songsList[last]);
     last++;
     prev++;
-
-    console.log(temp);
-
-    if(last > songsList.length - 1)
-        last = 0;
-
-    if(prev > songsList.length - 1)
-        prev = 0;
-
-
     
+    
+    
+    
+    prev = inRange(prev,songsList.length);
+    last = inRange(last, songsList.length);
+
     
 
     audioPlayer.src = carArray[0].url;;
@@ -133,6 +139,8 @@ function playNext() {
         e.src = carArray[i++].cover;
     });
     carouselImage[2].src = temp.cover; 
+    selectedSong(inRange(prev+1, songsList.length));
+
 
     
     playSong();
@@ -151,35 +159,59 @@ function playPrev() {
     last--;
 
 
-    if(last < 0)
-        last = songsList.length - 1;
+    prev = inRange(prev,songsList.length);
+    last = inRange(last, songsList.length);
+    
+    
 
-    if(prev < 0)
-        prev = songsList.length - 1;
-
-    console.log(carArray);
     audioPlayer.src = carArray[0].url;;
     let i = 0;
     carouselImage.forEach((e)=>{
         e.src = carArray[i++].cover;
     });
-
-    // console.log(temp);
     carouselImage[2].src = songsList[prev].cover; 
+    selectedSong(inRange(prev+1, songsList.length));
+
 
     playSong();
 }
 
-function change_vol()
+function changeProgress()
 {
-    var con = document.getElementById("change_vol");
-    con.value = audioPlayer.currentTime;
-    con.step = 0;
-    con.max = audioPlayer.duration;
+    progressBar.value = audioPlayer.currentTime;
+    progressBar.max = audioPlayer.duration;
+    if(audioPlayer.ended)
+    {
+        playNext();
+    }
 }
 
-function chooseSong(id)
+function selectedSong(id)
 {
-    var chosen = document.getElementById(id);
-    chosen.classList.add("musicSelected");
+    var chosen = document.getElementsByClassName("songDetails");
+    for(let i = 0; i < chosen.length; i++){
+        if(i == id)
+            chosen[i].classList.add("musicSelected");
+        else{
+            chosen[i].classList.remove("musicSelected");
+        }
+    }
+    
+}
+
+function inRange(n, length){
+    if(n > length - 1)
+    {
+        return n % length;
+    }
+    else if(n < 0)
+    {
+        return length - 1;
+    }
+
+    return n;
+}
+
+function changeTime(){
+    audioPlayer.currentTime = progressBar.value;
 }

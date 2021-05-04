@@ -38,6 +38,34 @@
 .icon img{
     width: 25px;
 }
+
+.banner{
+    flex: 1;
+    position: relative;
+    height: max-content;
+    
+}
+.banner h1{
+    position: absolute;
+    font-size: 70px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 35px;
+    text-shadow: 6px 2px black;
+    z-index: 4;
+    
+}
+.songDetails{
+    pointer-events: none;
+}
+.banner img{
+    height: 150px;
+    width: 100%;
+    filter: blur(1px);
+    display: block;
+}
+
 .artistOptions span{
     background: linear-gradient(45deg, #ef3939, #0d61ff);
     border: 0;

@@ -33,17 +33,6 @@ var prev = songsList.length - 1;
 var playBtn = document.getElementById("playBtn");
 
 
-var carousel = document.querySelectorAll(".currentPlayer  > input");
-var carouselImage = document.querySelectorAll("#cards  > label > img");
-let i = 0;
-carouselImage.forEach((e)=>{
-    
-
-    e.src = carArray[i++].cover;
-})
-carouselImage[2].src = songsList[songsList.length - 1].cover;
-audioPlayer.src = carArray[0].url;
-
 
 var songList = document.getElementById("songList");
 

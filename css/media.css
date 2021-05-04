@@ -3,10 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     overflow: hidden;
     position: relative;
 }
+
 nav {
     display: flex;
     width: 100%;
@@ -14,28 +16,28 @@ nav {
     padding: 10px;
     align-items: center;
     background: #050f2c;
-    border-bottom: 2px solid rgba(255,255,255,.1);;
+    border-bottom: 2px solid rgba(255, 255, 255, .1);
+    ;
 }
 
 h1 {
     color: white;
     font-weight: 300;
     font-family: 'Balsamiq Sans', cursive;
+    font-size: 2rem;
 }
-nav > h1{
+
+nav>h1 {
     color: white;
     font-weight: bolder;
     -webkit-text-fill-color: transparent;
-    font-size: 32px;
-    background: linear-gradient(
-124deg
-, #a3b7ef, #ef3939);
+    font-size: 2rem;
+    background: linear-gradient( 124deg, #a3b7ef, #ef3939);
     -webkit-background-clip: text;
     background-clip: text;
     font-family: 'Balsamiq Sans', cursive;
     margin-left: 25px;
     margin-top: 15px;
-    
 }
 
 nav img {
@@ -66,8 +68,14 @@ nav img {
     display: flex;
     flex-direction: column;
     background: #050f2c;
-    padding: 25px;
-    border-right:2px solid rgba(255,255,255,.1);
+    padding: 15px 25px;
+    border-right: 2px solid rgba(255, 255, 255, .1);
+}
+
+
+.genres-list {
+    overflow: auto;
+    height: 60vh;
 }
 
 .search {
@@ -75,15 +83,16 @@ nav img {
     justify-content: center;
     align-items: center;
     position: relative;
+    flex: 1;
 }
 
 .search i {
-    width: 60px;
-    font-size: 35px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
     background: white;
     border-radius: 50%;
     left: 0px;
@@ -105,27 +114,27 @@ nav img {
 }
 
 .genres .genresList {
-    font: 18px;
-    padding: 40px 25px;
-    overflow-y: auto;
+    padding: 5px 25px;
+    flex: 5;
 }
 
 .genre {
     display: flex;
     align-items: center;
     margin: 18px 10px;
-    background: rgba(255,255,255,.1);
+    background: rgba(255, 255, 255, .1);
     color: white;
     border-radius: 0px 10px 10px 0px;
     cursor: pointer;
     padding: 5px 15px;
     width: 200px;
-    
 }
 
 .genre h2 {
     padding: 0 10px;
-    font-family: 'Nanum Gothic', sans-serif;}
+    font-size: 1rem;
+    font-family: 'Nanum Gothic', sans-serif;
+}
 
 .player {
     flex: 3;
@@ -139,10 +148,16 @@ nav img {
     background: #050f2c;
 }
 
+
 .songList {
     width: 100%;
+    flex: 2.5;
+    background: #050f2c;
     padding: 0 20px;
     overflow: auto;
+}
+#songHeadings{
+    flex: .5;
 }
 
 .songList .songDetails, .songsHeading {
@@ -155,70 +170,61 @@ nav img {
     font-family: 'Balsamiq Sans', cursive;
     margin: 5px 0;
     border-radius: 10px;
-    background: rgba(255,255,255,.1);
-
+    background: rgba(255, 255, 255, .1);
 }
 
-.songDetails{
+.songDetails {
     cursor: pointer;
-    pointer-events: none;
 }
 
-.songList .songDetails span{
+.songList .songDetails span {
     padding: 2px 10px;
     font-size: 16px;
     color: #EDF2F4;
-    font-family: 'Nanum Gothic', sans-serif;}
+    font-family: 'Nanum Gothic', sans-serif;
+}
 
 /* .songList td i {
     padding-right: 5px;
 } */
 
-.musicSelected{
+.musicSelected {
     background: linear-gradient(45deg, #ef3939, #0d61ff) !important;
     border-radius: 10px;
     border: 0;
 }
-.songList tr{
-    cursor: pointer;
-    display: flex;
-    width: 100%;
-}
 
-.songName{
+.songName {
     flex: 2;
 }
 
-.artistName{
+.artistName {
     flex: 1;
 }
 
-.songDuration{
+.songDuration {
     flex: 1;
     text-align: right;
 }
 
-#songHeading{
+#songHeading {
     flex: 2;
     font-size: 25px;
     font-family: 'Balsamiq Sans', cursive;
 }
 
-#artistHeading{
+#artistHeading {
     flex: 1;
     font-family: 'Balsamiq Sans', cursive;
     font-size: 25px;
-
 }
-#durationHeading{
+
+#durationHeading {
     flex: 1;
     font-family: 'Balsamiq Sans', cursive;
     text-align: right;
     font-size: 25px;
-
 }
-
-
 
 .mediaControl {
     background: #050f2c;
@@ -230,56 +236,55 @@ nav img {
     padding: 20px;
 }
 
-.mediaControl input{
+.mediaControl input {
     width: 80%;
     height: 20px;
-    pointer-events: none;
     transition: all ease 1ms;
+    cursor: pointer;
 }
 
-
-.control{
+.control {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.control i{
+
+.control i {
     font-size: 60px;
     color: white;
     cursor: pointer;
     z-index: 1;
-
-
 }
-.control span{
+
+.control span {
     padding: 10px 20px;
     background: linear-gradient(45deg, #ef3939, #0d61ff);
     border: 0;
     cursor: pointer;
     color: white;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
     font-size: 15px;
     position: relative;
     font-family: 'Josefin Sans', sans-serif;
     width: 90px;
-    
 }
-#prev{
+
+#prev {
     border-radius: 20px 0 0 20px;
     right: -7px;
 }
 
-#next{
+#next {
     border-radius: 0 20px 20px 0px;
     right: 7px;
-
-    
 }
-.selected{
+
+.selected {
     background: linear-gradient(45deg, #ef3939, #0d61ff);
     color: white
 }
+
 /* Music Carousel Section */
 
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
@@ -304,7 +309,7 @@ nav img {
 
 .currentPlayer {
     width: 100%;
-    flex: 2.5;
+    flex: 3.5;
     max-width: 100%;
     max-height: 600px;
     height: 100%;
@@ -331,17 +336,19 @@ nav img {
     object-fit: cover;
 }
 
-.settings
-{
+.settings {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
+    padding: 5px 0;
+    flex: 1;
 }
-.settings i{
+
+.settings i {
     position: relative;
-    font-size: 30px;
-    width: 60px;
-    height: 60px;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -354,29 +361,45 @@ nav img {
     background-color: white;
     border: 2px solid white;
 }
-.buttons{
+
+.buttons {
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
 }
 
-
-@media(max-height:768px)
-{
-    .card img{
+@media(max-height:768px) {
+    .card img {
         width: 180px;
         height: 180px;
     }
+    .genre h2 {
+        font-size: 1rem;
+    }
+    .settings i {
+        font-size: 25px;
+        height: 40px;
+        width: 40px;
+    }
 }
 
-@media(max-height: 1024px) and (min-height: 769px)
-{
-    .card img{
+@media(max-height: 1024px) and (min-height: 769px) {
+    .card img {
         width: 250px;
         height: 250px;
     }
+    .genre h2 {
+        font-size: 1.5rem;
+    }
+    .settings i {
+        font-size: 30px;
+        height: 50px;
+        width: 50px;
+    }
 }
+
+
 
 #item-1:checked~.cards #song-3, #item-2:checked~.cards #song-1, #item-3:checked~.cards #song-2 {
     transform: translatex(-50%) scale(.8);
@@ -397,3 +420,21 @@ nav img {
 }
 
 /* Music Carousel Section */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ef3939, #0d61ff);
+    border-radius: 5px;
+}

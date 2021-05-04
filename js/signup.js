@@ -5,6 +5,7 @@ form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(() => {
+        alert("Signup Success");
         window.location.href = "./listener/";
     })
     .catch(error => console.error('Error!', error.message))
